@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>二维码生成器</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <script type="application/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="application/javascript" src="qrcode.min.js"></script>
+</head>
+
+<body>
+    <div class="divCode">
+        <span>
+            请输入文本：
+        </span>
+        <span style="flex:1"><input id="inputCode" class="qrinput" type="text"></span>
+    </div>
+    <div id="btnGenCode" class="qrbtn">生成</div>
+    <div id="btnQuickGenCode" class="qrbtn">快速生成当前页面二维码</div>
+    <div id='imgCode' class='imgCode'></div>
+    <script type="application/javascript" src="index.js"></script>
+</body>
+
+</html>

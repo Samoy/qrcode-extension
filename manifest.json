@@ -1,0 +1,25 @@
+{
+    "name": "二维码生成器",
+    "description": "快速生成二维码",
+    "version": "1.0",
+    "manifest_version": 3,
+    "permissions": [
+        "clipboardRead",
+        "tabs"
+    ],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": {
+            "16": "/icon/qrcode16.png",
+            "32": "/icon/qrcode32.png",
+            "48": "/icon/qrcode48.png",
+            "128": "/icon/qrcode128.png"
+        }
+    },
+    "icons": {
+        "16": "/icon/qrcode16.png",
+        "32": "/icon/qrcode32.png",
+        "48": "/icon/qrcode48.png",
+        "128": "/icon/qrcode128.png"
+    }
+}

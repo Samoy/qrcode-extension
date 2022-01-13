@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.divCode{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    width: 256px;
+    margin: 12px 12px 0 12px;
+}
+
+.qrinput{
+    border-radius: 3px;
+    border: 1px solid #ced4da;
+    outline: none;
+    padding: 4px 2px;
+    width: 100%;
+}
+
+.qrinput:focus, .qrinput:focus-visible{
+    border-color:#86b7fe;
+}
+
+.qrbtn{
+    margin: 12px;
+    background-color: #0d6efd;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    width: 256px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.imgCode{
+    margin: 0 12px 12px 12px;
+}
