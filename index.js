@@ -6,11 +6,13 @@
         var qrCode;
         var url;
 
-        // let queryOptions = { active: true, currentWindow: true };
-        // chrome.tabs.query(queryOptions)
-        //     .then(([tab]) => {
-        //         url = tab.url;
-        //     });
+        if (chrome && chrome.tabs) {
+            var queryOptions = { active: true, currentWindow: true };
+            chrome.tabs.query(queryOptions)
+                .then(([tab]) => {
+                    url = tab.url;
+                });
+        }
 
 
         // 获取剪贴板内容
