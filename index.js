@@ -6,11 +6,11 @@
         var qrCode;
         var url;
 
-        let queryOptions = { active: true, currentWindow: true };
-        chrome.tabs.query(queryOptions)
-            .then(([tab]) => {
-                url = tab.url;
-            });
+        // let queryOptions = { active: true, currentWindow: true };
+        // chrome.tabs.query(queryOptions)
+        //     .then(([tab]) => {
+        //         url = tab.url;
+        //     });
 
 
         // 获取剪贴板内容
@@ -37,12 +37,7 @@
                 alert("请先输入内容！");
                 return;
             }
-            if (qrCode) {
-                qrCode.clear();
-                qrCode.makeCode(text);
-            } else {
-                qrCode = new QRCode(imgCode[0], text);
-            }
+            genQRCode(text, imgCode);
         })
 
         // 快速生成二维码
@@ -51,12 +46,24 @@
                 alert("无法获取当前页面url!");
                 return;
             }
-            if (qrCode) {
-                qrCode.clear();
-                qrCode.makeCode(url);
-            } else {
-                qrCode = new QRCode(imgCode[0], url);
+            genQRCode(text, imgCode);
+        });
+
+        function genQRCode(text, imgCode) {
+            try {
+                if (qrCode) {
+                    qrCode.clear();
+                    qrCode.makeCode(text);
+                } else {
+                    qrCode = new QRCode(imgCode[0], text);
+                }
+            } catch (error) {
+                var message = error.message || "未知错误";
+                if (message.indexOf("code length overflow") > -1) {
+                    message = "字数过多！";
+                }
+                alert(message);
             }
-        })
+        }
     })
 })();
