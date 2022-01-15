@@ -62,7 +62,8 @@
             } catch (error) {
                 var message = error.message || "未知错误";
                 if (message.indexOf("code length overflow") > -1) {
-                    message = "字数过多！";
+                    message = "字数过多，请适当减少字数！";
+                    imgCode.empty();
                 }
                 alert(message);
             }
